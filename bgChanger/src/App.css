@@ -1,0 +1,66 @@
+.background {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	padding: 30px;
+	/* justify-content: center; */
+	gap: 8px;
+	padding-bottom: 100px;
+	align-items: center;
+}
+h1 {
+	text-align: center;
+	color: white;
+}
+.btn-row {
+	display: flex;
+	gap: 8px;
+}
+button {
+	padding: 10px 15px;
+	border: none;
+	border-radius: 10px;
+	color: white;
+	font-weight: bold;
+	font-size: 15px;
+}
+/* Style the label */
+label {
+	margin-right: 10px;
+	font-size: 20px;
+	color: white;
+}
+
+/* Style the color input */
+input[type="color"] {
+	border: 1px solid white;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	cursor: pointer;
+	outline: none;
+}
+span {
+	color: white;
+}
+/* Hide the default arrow button in Chrome and Safari */
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 5px;
+}
+
+/* Style the color swatch */
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+	border-radius: 50%;
+}
+
+.color-palette {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+}
+p {
+	color: white;
+	font-size: 30px;
+}
