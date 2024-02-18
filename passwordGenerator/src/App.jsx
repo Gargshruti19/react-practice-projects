@@ -9,6 +9,7 @@ function App() {
 	const [password, setPassword] = useState("");
 
 	//Password generator function
+
 	const passwordGenerator = useCallback(() => {
 		let pass = "";
 		let string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -16,25 +17,31 @@ function App() {
 		if (charAllowed) string += "!@#$%^&*-_+=[]{}~`";
 
 		//Loop over the length of the password and append it in pass variable
+
 		for (let i = 1; i <= length; i++) {
 			let char = Math.floor(Math.random() * string.length + 1);
 			pass += string.charAt(char);
 		}
 		// set value of password that we get from the for loop
+
 		setPassword(pass);
-		//everytime these dependency change, call passwordGenerator function
+		//if these dependency change, call passwordGenerator function
 	}, [length, numberAllowed, charAllowed, setPassword]);
 
 	//function to add copied password in clipboard
+
 	const copyPasswordToClipBoard = useCallback(() => {
 		passwordRef.current?.select(); // show selected text
-		passwordRef.current?.setSelectionRange(0, passwordRef.current.value.length); //set range of selection in this case 0 to the length of pssword
+		passwordRef.current?.setSelectionRange(0, passwordRef.current.value.length); //set range of selection in this case 0 to the length of password
 		window.navigator.clipboard.writeText(password);
 	}, [password]);
+
 	// call this password generator function whenever these dependencies changes
+
 	useEffect(() => {
 		passwordGenerator();
 	}, [length, numberAllowed, charAllowed, passwordGenerator]);
+
 	return (
 		<>
 			<div className="w-screen h-screen object-contain relative">
