@@ -11,9 +11,12 @@ const Github = () => {
 	});
 	console.log(data);
 	return (
-		<div className="h-[70vh] flex justify-center items-center text-5xl text-white bg-yellow-500 gap-20">
+		<div className="h-[70vh] flex justify-center items-center text-7xl text-white bg-yellow-500 gap-20">
 			<h1>Followers Count : {data.followers}</h1>
-			<img src={data.avatar_url} alt="avatar" />
+			<div className="flex flex-col justify-center items-center gap-4">
+				<img src={data.avatar_url} alt="avatar" />
+				<span className="text-3xl text-black">{data?.login}</span>
+			</div>
 		</div>
 	);
 };
