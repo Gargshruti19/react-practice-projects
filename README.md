@@ -15,3 +15,5 @@
 ## 5. Learn about Context Api (project)
 
 ## 6. Theme Changer Project (using context API)
+
+## 7. Todo App Project (using Context API)
